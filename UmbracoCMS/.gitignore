@@ -464,9 +464,6 @@ appsettings-schema.*.json
 # JSON schema file for umbraco-package.json
 umbraco-package-schema.json
 
-# Packages created from the backoffice (package.xml/package.zip)
-/umbraco/Data/CreatedPackages/
-
 # Temp folder containing Examine indexes, NuCache, MediaCache, etc.
 /umbraco/Data/TEMP/
 
@@ -475,5 +472,3 @@ umbraco-package-schema.json
 /umbraco/Data/*.sqlite.db-shm
 /umbraco/Data/*.sqlite.db-wal
 
-# Log files
-/umbraco/Logs/
