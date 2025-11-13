@@ -19,8 +19,6 @@ appsettings-schema.json
 # Log files
 /umbraco/Logs/
 
-# Media files
-/wwwroot/media/
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/dotnetcore,umbraco
