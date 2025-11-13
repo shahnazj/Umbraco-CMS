@@ -1,6 +1,19 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<HomePage>
+﻿@* @using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<HomePage> *@
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Web.Common.PublishedModels.HomePage>
 @{
-	Layout = "mainLayout.cshtml";
+    Layout = "mainLayout.cshtml";
 }
-@Html.GetBlockListHtml(Model.Sections)
+
+@* We add a null check to ensure Model.Sections exists and contains items.
+    If it's empty in Azure, the original code crashes; this prevents it.
+*@
+@if (Model.Sections != null && Model.Sections.Any())
+{
+    @Html.GetBlockListHtml(Model.Sections)
+}
+else
+{
+    // This is a temporary message just to confirm the page is loading.
+    <h1>Content is empty, but the page is now loading!</h1>
+}
